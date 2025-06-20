@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 7b09c3abd2ae98d4096cd51a6ec33cf4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerPaddlePrefab: {fileID: 1501702737124825484, guid: 1705f11c9fd62c048b93c7cef685adb8, type: 3}
+  - playerTwoPaddlePrefab: {fileID: 1447478905752731235, guid: 81e5192af976226408669aec6c312f2c, type: 3}
+  - aiPaddlePrefab: {fileID: 258709372001850673, guid: b58377864f588664c9dd5176b166669f, type: 3}
+  - playerSpawnPoint: {instanceID: 0}
+  - aiSpawnPoint: {instanceID: 0}
+  - ball: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
