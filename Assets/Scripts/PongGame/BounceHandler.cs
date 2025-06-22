@@ -12,6 +12,7 @@ public class BounceHandler : MonoBehaviour
     private void Awake()
     {
         ball = GetComponent<Ball>();
+        lastVelocity = rb.velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,11 +25,11 @@ public class BounceHandler : MonoBehaviour
         }
         else if (collision.collider.CompareTag("LeftGoal"))
         {
-
+            ball.ResetBall();
         }
         else if (collision.collider.CompareTag("RightGoal"))
         {
-
+            ball.ResetBall();
         }
     }
 }
