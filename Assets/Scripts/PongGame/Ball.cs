@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ResetBall();
+
     }
 
     // Update is called once per frame

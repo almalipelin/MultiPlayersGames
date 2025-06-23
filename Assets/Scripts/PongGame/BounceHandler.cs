@@ -9,6 +9,7 @@ public class BounceHandler : MonoBehaviour
     private Rigidbody2D rb;
     Vector3 lastVelocity;
 
+    
     private void Awake()
     {
         ball = GetComponent<Ball>();
