@@ -13,6 +13,12 @@ public class BounceHandler : MonoBehaviour
     private void Awake()
     {
         ball = GetComponent<Ball>();
+        rb = GetComponent<Rigidbody2D>();
+        
+    }
+
+    private void Update()
+    {
         lastVelocity = rb.velocity;
     }
 
