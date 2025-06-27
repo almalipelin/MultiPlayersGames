@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AdaptivePerformance.VisualScripting;
 
 public class BounceHandler : MonoBehaviour
 {
@@ -30,12 +31,16 @@ public class BounceHandler : MonoBehaviour
             var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
             rb.velocity = direction * speed;
         }
-        else if (collision.collider.CompareTag("LeftGoal"))
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("LeftGoal"))
         {
             ScoreManager.instance.AddScore(2);
             ball.ResetBall();
         }
-        else if (collision.collider.CompareTag("RightGoal"))
+        else if (collider.CompareTag("RightGoal"))
         {
             ScoreManager.instance.AddScore(1);
             ball.ResetBall();
