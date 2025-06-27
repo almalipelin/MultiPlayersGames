@@ -32,10 +32,12 @@ public class BounceHandler : MonoBehaviour
         }
         else if (collision.collider.CompareTag("LeftGoal"))
         {
+            ScoreManager.instance.AddScore(2);
             ball.ResetBall();
         }
         else if (collision.collider.CompareTag("RightGoal"))
         {
+            ScoreManager.instance.AddScore(1);
             ball.ResetBall();
         }
     }
