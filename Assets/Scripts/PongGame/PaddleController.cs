@@ -11,6 +11,9 @@ public class PaddleSpawner : MonoBehaviour
     public Transform playerSpawnPoint;
     public Transform aiSpawnPoint;
 
+   
+    public Transform ballTransform;
+
     void Start()
     {
         if (PlayerSelectionController.numberOfPlayers == 1)
@@ -24,4 +27,13 @@ public class PaddleSpawner : MonoBehaviour
             Instantiate(playerTwoPaddlePrefab, aiSpawnPoint.position, Quaternion.identity);
         }
     }
+
+    /*void Update()
+    {
+        Vector3 currentPosition = aiPaddlePrefab.transform.position;
+        Vector3 targetPosition = new Vector3(currentPosition.x, ballTransform.position.y, currentPosition.z);
+
+        aiPaddlePrefab.transform.position = Vector3.MoveTowards(currentPosition, targetPosition, 5 * Time.deltaTime);
+
+    }*/
 }
