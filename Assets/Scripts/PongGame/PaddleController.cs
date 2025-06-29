@@ -19,7 +19,12 @@ public class PaddleSpawner : MonoBehaviour
         if (PlayerSelectionController.numberOfPlayers == 1)
         {
             Instantiate(playerPaddlePrefab, playerSpawnPoint.position, Quaternion.identity);
-            Instantiate(aiPaddlePrefab, aiSpawnPoint.position, Quaternion.identity);
+            GameObject aiPaddleInstance = Instantiate(aiPaddlePrefab, aiSpawnPoint.position, Quaternion.identity);
+            AIPaddle AIPaddleScript = aiPaddleInstance.GetComponent<AIPaddle>();
+            if (AIPaddleScript != null )
+            {
+                AIPaddleScript.SetBallTransform(ballTransform);
+            }
         }
         else if (PlayerSelectionController.numberOfPlayers == 2)
         {

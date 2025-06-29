@@ -7,6 +7,11 @@ public class AIPaddle : MonoBehaviour
     public Transform Ball;
     public float moveSpeed = 5f;
     public float difficultyOffset = 0.5f;
+
+    public void SetBallTransform(Transform ballTransform)
+    {
+        Ball = ballTransform;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -30,14 +35,13 @@ public class AIPaddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Ball == null)
+        {
+            return;
+        }
+
         Vector3 currentPosition = transform.position;
-        Vector3 targetPosition = new Vector3(currentPosition.x, Ball.position.y, currentPosition.z);
-        transform.position = Vector3.MoveTowards(currentPosition, targetPosition, moveSpeed * Time.deltaTime);
+        float targetY = Mathf.Lerp(currentPosition.y, Ball.position.y, moveSpeed*Time.deltaTime);
+        transform.position = new Vector3(currentPosition.x, targetY, currentPosition.z);
     }
 }
-/*if(Ball != null)
-        {
-            Vector3 currentPosition = transform.position;
-            Vector3 targetPosition = new Vector3(currentPosition.x,Ball.position.y,currentPosition.z);
-            transform.position = Vector3.MoveTowards(currentPosition,targetPosition,moveSpeed*Time.deltaTime);
-        }*/
