@@ -955,7 +955,7 @@ MonoBehaviour:
   aiPaddlePrefab: {fileID: 258709372001850673, guid: b58377864f588664c9dd5176b166669f, type: 3}
   playerSpawnPoint: {fileID: 367477811}
   aiSpawnPoint: {fileID: 678097336}
-  ballTransform: {fileID: 3329632091051590302, guid: a9f10450eb8e32b4fabd87e5843918c7, type: 3}
+  ballTransform: {fileID: 2097500012257012333}
 --- !u!4 &1075702645
 Transform:
   m_ObjectHideFlags: 0
@@ -1400,6 +1400,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f10450eb8e32b4fabd87e5843918c7, type: 3}
+--- !u!4 &2097500012257012333 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3329632091051590302, guid: a9f10450eb8e32b4fabd87e5843918c7, type: 3}
+  m_PrefabInstance: {fileID: 2097500012257012332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
