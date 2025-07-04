@@ -11,7 +11,6 @@ public class AIPaddle : MonoBehaviour
     public void SetBallTransform(Transform ballTransform)
     {
         Ball = ballTransform;
-        Debug.Log("AIPaddle Update is running . Ball reference: " + (Ball != null ? Ball.name : "NULL"));
     }
     // Start is called before the first frame update
     void Start()

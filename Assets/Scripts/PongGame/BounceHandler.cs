@@ -8,28 +8,29 @@ public class BounceHandler : MonoBehaviour
     private Ball ball;
     public float speed = 5f;
     private Rigidbody2D rb;
-    Vector3 lastVelocity;
-
+    //Vector3 lastVelocity;
+    public float maxBounceAngle = 75f;
     
     private void Awake()
     {
         ball = GetComponent<Ball>();
         rb = GetComponent<Rigidbody2D>();
-        
-    }
-
-    private void Update()
-    {
-        lastVelocity = rb.velocity;
+        if (ball == null)
+        {
+            Debug.LogError("BoumceHandler requires a Ball component on the same GameObject.");
+        }
+        if (rb == null)
+        {
+            Debug.LogError("BounceHandler requires a Rigidbody2D component on the same GameObject.");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Paddle"))
+        if (collision.collider.CompareTag("Wall"))
         {
-            var speedTwo = lastVelocity.magnitude;
-            var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
-            rb.velocity = direction * speed;
+            Vector2 currentVelocity = rb.velocity;
+            Vector2 normal = collision.GetContact(0).normal;
         }
     }
 
