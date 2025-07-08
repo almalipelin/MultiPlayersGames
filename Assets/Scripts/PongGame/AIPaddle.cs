@@ -17,17 +17,17 @@ public class AIPaddle : MonoBehaviour
     {
         if(SelectDifficultyController.selectedDifficulty == "Easy")
         {
-            moveSpeed = 5f;
+            moveSpeed = 2f;
             difficultyOffset = 5f;
         }
         if(SelectDifficultyController.selectedDifficulty == "Medium")
         {
-            moveSpeed = 7f;
+            moveSpeed = 4f;
             difficultyOffset = 2.5f;
         }
         if(SelectDifficultyController.selectedDifficulty == "Hard")
         {
-            moveSpeed = 10f;
+            moveSpeed = 5f;
             difficultyOffset = 1f;
         }
     }

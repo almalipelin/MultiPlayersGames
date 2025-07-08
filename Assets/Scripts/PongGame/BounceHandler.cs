@@ -8,8 +8,7 @@ public class BounceHandler : MonoBehaviour
     private Ball ball;
     public float speed = 5f;
     private Rigidbody2D rb;
-    //Vector3 lastVelocity;
-    public float maxBounceAngle = 75f;
+    Vector3 lastVelocity;
     
     private void Awake()
     {
@@ -25,12 +24,18 @@ public class BounceHandler : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        lastVelocity = rb.velocity;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Wall"))
+        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Paddle"))
         {
-            Vector2 currentVelocity = rb.velocity;
-            Vector2 normal = collision.GetContact(0).normal;
+            var speedTwo = lastVelocity.magnitude;
+            var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+            rb.velocity = direction * speed;
         }
     }
 
