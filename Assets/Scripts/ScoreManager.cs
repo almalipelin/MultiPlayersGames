@@ -45,4 +45,18 @@ public class ScoreManager : MonoBehaviour
             player2Text.text = player2Score.ToString();
         }
     }
+
+    public int GetScore(int playerNumber)
+    {
+        if (playerNumber == 1) return player1Score;
+        else if (playerNumber == 2) return player2Score;
+        return 0; // Hata durumu
+    }
+
+    public void ResetScores()
+    {
+        player1Score = 0;
+        player2Score = 0;
+        // UI text'lerini burada sýfýrlayabilirsin
+    }
 }

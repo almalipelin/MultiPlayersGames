@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public static Ball Instance;
     public float speed = 5f;
     private Rigidbody2D rb;
     private bool isLaunched = false;

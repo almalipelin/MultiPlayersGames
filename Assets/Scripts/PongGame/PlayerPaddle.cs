@@ -22,8 +22,8 @@ public class PlayerPaddle : MonoBehaviour
 
     void MovePaddle(Touch touch)
     {
-        float minY = -3.75f;
-        float maxY = 3.75f;
+        float minY = -5.4f;
+        float maxY = 5.4f;
         Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
         Vector3 newPosition = new Vector3(transform.position.x, touchPosition.y, transform.position.z);
         newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
