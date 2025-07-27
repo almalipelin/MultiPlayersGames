@@ -87,11 +87,11 @@ public class GameOverPanelController : MonoBehaviour
         {
             if (player1Score > player2Score)
             {
-                winnerText.text = "You Win!";
+                winnerText.text = "You Lost!";
             }
             else if (player1Score < player2Score)
             {
-                winnerText.text = "Player 2 Wins!";
+                winnerText.text = "You Wins!";
             }
             else
             {
