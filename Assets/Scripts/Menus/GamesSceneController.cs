@@ -16,4 +16,16 @@ public class GamesSceneController : MonoBehaviour
             SceneManager.LoadScene("PongGame");
         }
     }
+
+    public void MatchingGameButton()
+    {
+        if (PlayerSelectionController.numberOfPlayers == 1)
+        {
+            SceneManager.LoadScene("SelectDifficulty");
+        }
+        else
+        {
+            SceneManager.LoadScene("MatchingGame");
+        }
+    }
 }
